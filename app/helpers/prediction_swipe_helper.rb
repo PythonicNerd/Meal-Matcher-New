@@ -1,0 +1,2 @@
+module PredictionSwipeHelper
+end

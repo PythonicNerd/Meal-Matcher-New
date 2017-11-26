@@ -1,0 +1,22 @@
+<h1>Register, yo!</h1>
+
+<p>
+<%= form_for :registration, url: registration_path do |f| %>
+<%= f.label "Username" %>
+<%= f.text_field :username %>
+</p>
+<br>
+<p>
+<%= f.label "Password" %>
+<%= f.text_field :password %>
+<br>
+</p>
+
+<p>
+  <%= f.label "Zip Code" %>
+  <%= f.text_field :zip %>
+  <br>
+</p>
+<%= f.submit %>
+
+<% end %>

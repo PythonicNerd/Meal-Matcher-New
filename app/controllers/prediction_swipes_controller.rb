@@ -1,0 +1,2 @@
+class PredictionSwipesController < ApplicationController
+end

@@ -1,0 +1,2 @@
+module RandomSwipeHelper
+end
