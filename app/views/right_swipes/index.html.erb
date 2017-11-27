@@ -1,5 +1,12 @@
 <h1>YOYO YOU IN B</h1>
 
-<%=@THIS_REST[:name]%>
+<h1><%=@THIS_REST[:name]%></h1>
+
+<h2>Rating: <%= @THIS_REST[:price][:rating] %></h2>
+
+<h2> <%= @THIS_REST[:price][:stats] %> </h2>
+
+<h2>Phone: <%= @THIS_REST[:contact][:formattedPhone] %></h2>
+
 
 <%= @THIS_REST %>
