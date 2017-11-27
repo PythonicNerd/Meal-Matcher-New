@@ -1,0 +1,2 @@
+module RightSwipesHelper
+end
