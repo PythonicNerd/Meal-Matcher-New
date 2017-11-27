@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resource :login
   resource :registration
+  resource :right_swipe
   resource :random_swipe do
     get :update_text, on: :collection
   end

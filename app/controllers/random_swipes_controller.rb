@@ -46,6 +46,7 @@ class RandomSwipesController < ApplicationController
 
 
       @THIS_REST = @venue_search.groups[0][:items][v][:venue]
+      Rails.application.config.rest = @THIS_REST
       for i in 0..40
         puts '\n'
       end
@@ -115,8 +116,9 @@ class RandomSwipesController < ApplicationController
     puts @dist
 
     @THIS_REST = @venue_search.groups[0][:items][v][:venue]
+    Rails.application.config.rest = @THIS_REST
 
-    data_array = [@name_,@price,@venuetype,@dist, @THIS_REST]
+    data_array = [@name_,@price,@venuetype,@dist, @THIS_REST]  
     respond_to do |format|
         format.html
         format.json { render json: data_array }
