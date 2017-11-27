@@ -1,12 +1,45 @@
-<h1>YOYO YOU IN B</h1>
+<style>
+*{
+  text-align:center;
+}
 
+</style>
+
+<% begin %>
 <h1><%=@THIS_REST[:name]%></h1>
+<% rescue %>
+<% end %>
 
-<h2>Rating: <%= @THIS_REST[:price][:rating] %></h2>
+<% begin %>
+<h2>Rating: <%= @THIS_REST[:rating] %></h2>
+<% rescue %>
+<% end %>
 
+<% begin %>
 <h2> <%= @THIS_REST[:price][:stats] %> </h2>
+<% rescue %>
+<% end %>
 
+<% begin %>
 <h2>Phone: <%= @THIS_REST[:contact][:formattedPhone] %></h2>
+<% rescue %>
+<% end %>
+
+<% begin %>
+<h2>Hours: <%=@THIS_REST[:hours][:richStatus][:text] %></h2>
+<% rescue %>
+<% end %>
+
+<% begin %>
+<h2><a href="<%= @THIS_REST[:menu][:url] %>" target="_blank">Menu</a></h2>
+<% rescue %>
+<% end %>
 
 
-<%= @THIS_REST %>
+<% begin %>
+<h2>Address: <%= @THIS_REST[:location][:address] %> </h2>
+<% rescue %>
+<% end %>
+
+
+<%= button_to "Back", random_swipe_path, :id => "open-contacts-dialog-btn",  :class => "inbox-sf-add-btn tip", :method => :get %>

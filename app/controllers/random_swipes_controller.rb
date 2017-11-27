@@ -8,6 +8,10 @@ class RandomSwipesController < ApplicationController
 
   #:v=> '20170901'
 
+  def create
+    show()
+  end
+
   def show
 
     @user = Rails.application.config.user
@@ -52,10 +56,12 @@ class RandomSwipesController < ApplicationController
       end
 
 
+
+      render 'random_card_view'
+
     rescue
       redirect_to :back
     end
-      render 'random_card_view'
     end
   end
 
@@ -118,7 +124,7 @@ class RandomSwipesController < ApplicationController
     @THIS_REST = @venue_search.groups[0][:items][v][:venue]
     Rails.application.config.rest = @THIS_REST
 
-    data_array = [@name_,@price,@venuetype,@dist, @THIS_REST]  
+    data_array = [@name_,@price,@venuetype,@dist, @THIS_REST]
     respond_to do |format|
         format.html
         format.json { render json: data_array }
