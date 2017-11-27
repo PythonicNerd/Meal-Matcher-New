@@ -14,13 +14,19 @@ class LoginsController < ApplicationController
           @logged_in = true
           @user = i
           Rails.application.config.user = @user
+          match = true
         end
       end
     end
 
-    puts @user[:username]
+    
 
-    redirect_to random_swipe_path
+    if match
+      redirect_to random_swipe_path
+    else
+      render 'login_error'
+    end
+
   end
 
   def login_params

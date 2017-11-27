@@ -1,14 +1,130 @@
 <style media="screen">
+/* Header */
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+#large-header {
+	background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+}
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.demo-1 .main-title {
+	text-transform: uppercase;
+	font-size: 4.2em;
+	letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+	font-weight: 200;
+}
+
+@media only screen and (max-width : 768px) {
+	.demo-1 .main-title {
+		font-size: 3em;
+	}
+}
+
+
+
+
+
+
+
+
 
 </style>
+
+
+
+<style type="text/css">
+
+
+  div{
+
+  position: relative;
+  }
+  html, body {
+      height: 100%;
+      margin: 0;
+  }
+
+  #large-header {
+      z-index: -100;
+      min-height: 100%;
+  }
+
+
+  .btn {
+    background: #4f012c;
+    background-image: -webkit-linear-gradient(top, #4f012c, #360125);
+    background-image: -moz-linear-gradient(top, #4f012c, #360125);
+    background-image: -ms-linear-gradient(top, #4f012c, #360125);
+    background-image: -o-linear-gradient(top, #4f012c, #360125);
+    background-image: linear-gradient(to bottom, #4f012c, #360125);
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 3px;
+    font-family: 'Courier New';
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border:none;
+  }
+
+
+  #login{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:auto;
+    margin-right:-100px;
+  }
+
+
+</style>
+
 
 <head>
   <title>Meal Matcher | Home</title>
 </head>
 
 <body>
-  <h1 id='title'>Meal Matcher</h1>
+
+
+
+  <div id="large-header" class="large-header">
+    <h1 class="main-title">Meal <span class="thin">Matcher</span></h1>
+
   <h3 id='desc'>Find the perfect meal, for you</h3>
-  <%=  button_to "Login", login_path, method: :get %>
-  <%= button_to "Register", registration_path, method: :get %>
+
+
+  <div id="login">
+  <%=  button_to "Login", login_path, method: :get, class: 'btn login' %>
+</div>
+
+  <div id="register">
+  <%= button_to "Register", registration_path, method: :get, class: 'btn register' %>
+</div>
+</div>
+
+
 </body>

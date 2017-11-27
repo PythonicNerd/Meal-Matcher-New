@@ -3,6 +3,10 @@
   text-align:center;
 }
 
+#link{
+  color:black;
+
+}
 </style>
 
 <% begin %>
@@ -31,7 +35,7 @@
 <% end %>
 
 <% begin %>
-<h2><a href="<%= @THIS_REST[:menu][:url] %>" target="_blank">Menu</a></h2>
+<h2 id = link><a href="<%= @THIS_REST[:menu][:url] %>" target="_blank">Menu</a></h2>
 <% rescue %>
 <% end %>
 
@@ -42,4 +46,4 @@
 <% end %>
 
 
-<%= button_to "Back", random_swipe_path, :id => "open-contacts-dialog-btn",  :class => "inbox-sf-add-btn tip", :method => :get %>
+<%= button_to "Back", random_swipe_path %>

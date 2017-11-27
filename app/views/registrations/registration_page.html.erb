@@ -17,6 +17,14 @@
   <%= f.text_field :zip %>
   <br>
 </p>
+
+
+<% if @duplicate  %>
+
+<h1 style="color:red;">Sorry bud, that's already taken</h1>
+
+<% end %>
+
 <%= f.submit %>
 
 <% end %>

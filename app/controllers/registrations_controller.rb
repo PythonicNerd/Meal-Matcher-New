@@ -1,6 +1,5 @@
 class RegistrationsController < ApplicationController
-#t.string :swiped_right, array: true, default: []
-#t.string :swiped_left, array: true, default: []
+
   def show
     render 'registration_page'
   end
@@ -9,15 +8,38 @@ class RegistrationsController < ApplicationController
   def create
     u = User.new(reg_params)
     puts u[:username]
-    u.save
+
+    @duplicate = false
+
+
+
+    User.all.each do |x|
+      if u[:username] == x[:username]
+        @duplicate = true
+      end
+    end
+
+    if @duplicate == false
+      u.save
+    end
 
     User.all.each do |u|
       puts u[:username]
     end
 
+
+    if @duplicate == true
+      for i in 0..30
+        puts "DUPLICATEEE"
+      end
+    end
     @user = u
 
-    render 'logins/login_page'
+    if @duplicate == false
+      render 'logins/login_page'
+    else
+      render 'regerror'
+    end
   end
 
   def reg_params
