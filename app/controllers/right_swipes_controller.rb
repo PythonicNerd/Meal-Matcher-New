@@ -27,9 +27,15 @@ class RightSwipesController < ApplicationController
     #Address: r[:contact][:location][:address]
     #Is Open: r[:hours][:isOpen]
 
-    
+
     @THIS_REST = Rails.application.config.rest
 
     render 'index'
+  end
+
+
+
+  def redirect_random_swipe
+    redirect_to "random_swipes/random_card_view"
   end
 end
