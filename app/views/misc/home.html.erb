@@ -57,10 +57,6 @@
 <style type="text/css">
 
 
-  div{
-
-  position: relative;
-  }
   html, body {
       height: 100%;
       margin: 0;
@@ -88,16 +84,29 @@
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     border:none;
+		width:150px;
   }
 
 
-  #login{
-    position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right:auto;
-    margin-right:-100px;
+  .login{
+    position: absolute;
+		margin-top: 400px;
+		margin-left: 50px;
+
   }
+	.register{
+    position: absolute;
+
+	margin-top: 400px;
+		margin-left: -200px;
+
+  }
+
+
+	#content{
+		text-align: center;
+		height: 100%;
+	}
 
 
 </style>
@@ -109,7 +118,9 @@
 
 <body>
 
+<!-- TODO: Make buttons a lighter color !-->
 
+	<div id="content">
 
   <div id="large-header" class="large-header">
     <h1 class="main-title">Meal <span class="thin">Matcher</span></h1>
@@ -123,6 +134,7 @@
 
   <div id="register">
   <%= button_to "Register", registration_path, method: :get, class: 'btn register' %>
+</div>
 </div>
 </div>
 
