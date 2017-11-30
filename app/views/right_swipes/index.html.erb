@@ -30,7 +30,7 @@
 <% end %>
 
 <% begin %>
-<h2>Hours: <%=@THIS_REST[:hours][:richStatus][:text] %></h2>
+<h2><%=@THIS_REST[:hours][:richStatus][:text] %></h2>
 <% rescue %>
 <% end %>
 
@@ -46,4 +46,4 @@
 <% end %>
 
 
-<%= button_to "Back", random_swipe_path %>
+<%= button_to "Back", random_swipe_path, method: :get %>

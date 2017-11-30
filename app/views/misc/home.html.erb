@@ -9,11 +9,9 @@
 	background-position: center center;
 	z-index: 1;
 }
-
 #large-header {
 	background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
 }
-
 .main-title {
 	position: absolute;
 	margin: 0;
@@ -25,35 +23,27 @@
 	-webkit-transform: translate3d(-50%,-50%,0);
 	transform: translate3d(-50%,-50%,0);
 }
-
 .demo-1 .main-title {
 	text-transform: uppercase;
 	font-size: 4.2em;
 	letter-spacing: 0.1em;
 }
-
 .main-title .thin {
 	font-weight: 200;
 }
-
 @media only screen and (max-width : 768px) {
 	.demo-1 .main-title {
 		font-size: 3em;
 	}
 }
-
-
   html, body {
       height: 100%;
       margin: 0;
   }
-
   #large-header {
       z-index: -100;
       min-height: 100%;
   }
-
-
   .btn {
     background: #4f012c;
     background-image: -webkit-linear-gradient(top, #4f012c, #360125);
@@ -75,7 +65,9 @@
 
   }
 
-
+  .btn:hover{
+    cursor:pointer;
+  }
   .login{
     position: absolute;
 		margin-top: 20px;
@@ -85,44 +77,34 @@
 	.register{
 		margin-top: 20px;
     position: absolute;
-
 		margin-left: -200px;
-
   }
-
-
 	#content{
 		text-align: center;
 		height: 100%;
 	}
-
 	#bar{
 		height:2px;
 		width:400px;
 		margin-top:20px;
-		background-color: white;
-
+		background-color: #f9f1e9;
 			position: absolute;
 			text-align: center;
 			top: 50%;
 			left: 50%;
 			-webkit-transform: translate3d(-50%,-50%,0);
 			transform: translate3d(-50%,-50%,0);
-
 	}
-
-
 	#desc{
-
-		margin-top:30px;
-		color:white;
+		color: #f9f1e9;
 		text-align: center;
-		margin-top: 430px;
-		z-index: -10;
+		margin-top: 370px;
 
 	}
 
-
+  #button_content{
+    margin-top: -200px;
+  }
 </style>
 
 
@@ -140,17 +122,46 @@
     <h1 class="main-title">Meal <span class="thin">Matcher</span></h1>
 		<div id="bar"></div>
 
+
   <h3 id='desc'>Find the perfect meal, for you</h3>
+  </div>
+
+  <div id="button_content">
 
 
 
-  <%=  button_to "Login", login_path, method: :get, class: 'btn login' %>
 
 
 
-  <%= button_to "Register", registration_path, method: :get, class: 'btn register' %>
+  <a class="frame-btn register" href="/registration/">
+	<span class="frame-btn__outline frame-btn__outline--tall">
+		<span class="frame-btn__line frame-btn__line--tall"></span>
+		<span class="frame-btn__line frame-btn__line--flat"></span>
+	</span>
+	<span class="frame-btn__outline frame-btn__outline--flat">
+		<span class="frame-btn__line frame-btn__line--tall"></span>
+		<span class="frame-btn__line frame-btn__line--flat"></span>
+	</span>
+	<span class="frame-btn__solid"></span>
+	<span class="frame-btn__text"><b>Register</b></span>
+</a>
 
+
+
+<a class="frame-btn login" href="/login/">
+<span class="frame-btn__outline frame-btn__outline--tall">
+  <span class="frame-btn__line frame-btn__line--tall"></span>
+  <span class="frame-btn__line frame-btn__line--flat"></span>
+</span>
+<span class="frame-btn__outline frame-btn__outline--flat">
+  <span class="frame-btn__line frame-btn__line--tall"></span>
+  <span class="frame-btn__line frame-btn__line--flat"></span>
+</span>
+<span class="frame-btn__solid"></span>
+<span class="frame-btn__text">Login</span>
+</a>
 </div>
+
 </div>
 
 
