@@ -1,8 +1,17 @@
 <h1>Register, yo!</h1>
 
+<style>
+
+h1,h2,h3,h4,h5,h6,p{
+  color:black;
+}
+
+</style>
+
 <p>
-<%= form_for :registration, url: registration_path do |f| %>
-<%= f.label "Username" %>
+<%= form_for :registration,:class => "forum",  url: registration_path do |f| %>
+<div id="forum-container">
+<%= f.label "Username", :class => "username" %>
 <%= f.text_field :username %>
 </p>
 <br>
@@ -18,13 +27,6 @@
   <br>
 </p>
 
-
-<% if @duplicate  %>
-
-<h1 style="color:red;">Sorry bud, that's already taken</h1>
-
-<% end %>
-
 <%= f.submit %>
-
+</div>
 <% end %>
