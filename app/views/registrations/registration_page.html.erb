@@ -1,32 +1,50 @@
 
 
+<style>
 
+h1,h2,h3,h4,h5,h6,p{
+  color:black;
+}
 
+*{
+  font-family: 'Barlow Semi Condensed', "Comic Sans MS";
+  font-weight: bold;
+}
 
+</style>
 
-
-<h1>Register, yo!</h1>
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Roboto" rel="stylesheet">
 
 <p>
-<%= form_for :registration, url: registration_path do |f| %>
-<%= f.label "Username" %>
-<%= f.text_field :username %>
+  <div id="forum-container">
+<%= form_for :registration,:class => "forum",  url: registration_path do |f| %>
+
+
+  <h1 id="title">Register</h1>
+
+  <%= f.label "Username", :class => "username_lab" %>
+
+<br>
+    <%= f.text_field :username, :class => "username in" %>
 </p>
 <br>
+
 <p>
-<%= f.label "Password" %>
-<%= f.text_field :password %>
+<%= f.label "Password", :class => "password_lab" %>
+<br>
+<%= f.text_field :password, :class => "password in" %>
 <br>
 </p>
 
 <p>
-  <%= f.label "Zip Code" %>
-  <%= f.text_field :zip %>
+  <%= f.label "Zip Code", :class => "zip_lab" %>
+  <br>
+  <%= f.text_field :zip, :class => "zip in" %>
   <br>
 </p>
 
 
-
-<%= f.submit %>
-
+<%= f.submit "Login", :class => "submit arrow-btn" %>
+<%= link_to "Login", "#", :onclick => "$('.forum').submit()", :class=>"arrow-btn" %>
+</div>
 <% end %>

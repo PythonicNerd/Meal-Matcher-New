@@ -1,5 +1,11 @@
 <style media="screen">
 /* Header */
+
+
+
+*{
+	text-align: center;
+}
 .large-header {
 	position: relative;
 	width: 100%;
@@ -61,6 +67,7 @@
     text-decoration: none;
     border:none;
 		width:150px;
+		cursor:pointer;
 
   }
 
@@ -95,9 +102,16 @@
 			transform: translate3d(-50%,-50%,0);
 	}
 	#desc{
-		color: #f9f1e9;
+		position: absolute;
+		display: inline;
+		top:50%;
+		margin-top:30px;
+		margin-left: -130px;
+
 		text-align: center;
-		margin-top: 370px;
+		color: #f9f1e9;
+		float: top;
+		line-height: 20px;
 
 	}
 
@@ -122,8 +136,9 @@
 		<div id="bar"></div>
 
 
-  <h3 id='desc'>Find the perfect meal, for you</h3>
+
   </div>
+	<h3 id='desc'>Find the perfect meal, for you</h3>
 
   <div id="button_content">
 
@@ -142,7 +157,7 @@
 		<span class="frame-btn__line frame-btn__line--flat"></span>
 	</span>
 	<span class="frame-btn__solid"></span>
-	<span class="frame-btn__text"><b>Register</b></span>
+	<span class="frame-btn__text">Register</span>
 </a>
 
 

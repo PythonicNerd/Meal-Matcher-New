@@ -54,3 +54,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foursquare2' #accessing Foursquare
 gem 'gon' #passing variables between Ruby and JS
 gem 'geocoder'
+gem 'bourbon'

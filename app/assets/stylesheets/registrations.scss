@@ -1,0 +1,84 @@
+
+// Place all the styles related to the registrations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-image: image-url('reg-bg.jpg');
+}
+
+#title{
+  left: 50%;
+  top: 5%;
+}
+
+.username_lab{
+  color:black;
+}
+
+#forum-container{
+  border-radius: 4px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:4px;
+  background-color:rgba(108, 109, 109, .7);
+  width: 400px;
+  height: 500px;
+}
+
+.forum{
+  height:800px;
+}
+
+input.in{
+  border-radius:3px;
+  border:none;
+  border-bottom: 2px solid rgb(69, 118, 198);
+  background-color:rgb(75, 84, 99);
+  padding: 12px 20px;
+}
+
+.arrow-btn{
+	position: relative;
+	display: inline-block;
+  	border-radius: 0;
+	color: #b2876f;
+  	margin-top:2rem;
+  	font-weight: bold;
+  	font-size: 0.8rem;
+  	letter-spacing: 2px;
+  	text-decoration: none;
+	@include transition;
+	padding-right: 2.5em;
+	// vertical-align: top;
+
+
+	&:hover{
+		&:after{
+			transition: 400ms $ease_out;
+			transform: translateX(15px);
+			opacity: 0;
+		}
+		&:before{
+			transition: 700ms $ease_out;
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	&:before,&:after{
+		content: '\27F6';
+		position: absolute;
+		right: 0;
+		top: -25%;
+	}
+
+	&:before{
+		transform: translateX(-15px);
+		opacity: 0;
+	}
+	&:after{
+		transform: none;
+	}
+}
