@@ -1,3 +1,48 @@
+<style>
+
+h1,h2,h3,h4,h5,h6,p{
+  color:black;
+}
+
+*{
+  font-family: 'Barlow Semi Condensed', "Comic Sans MS";
+  font-weight: bold;
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Roboto" rel="stylesheet">
+
+<p>
+  <div id="forum-container">
+    <%= form_for :login, :class => "forum", url: login_path do |f| %>
+
+
+  <h1 id="title">Login</h1>
+
+  <%= f.label "Username", :class => "username_lab" %>
+
+<br>
+    <%= f.text_field :username, :class => "username in" %>
+</p>
+<br>
+
+<p>
+<%= f.label "Password", :class => "password_lab" %>
+<br>
+<%= f.text_field :password, :class => "password in" %>
+<br>
+</p>
+
+
+<%= f.submit "Login", :class => "submit" %>
+
+</div>
+<% end %>
+
+
+
+<!--
 <h1>Login</h1>
 
 <p>
@@ -14,3 +59,5 @@
 <%= f.submit %>
 
 <% end %>
+
+!-->
