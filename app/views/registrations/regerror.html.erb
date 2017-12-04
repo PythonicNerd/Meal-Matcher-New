@@ -1,0 +1,61 @@
+<style>
+
+body{
+  background-image: image-url('reg-bg.jpg');
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  color:black;
+}
+
+*{
+  font-family: 'Barlow Semi Condensed', "Comic Sans MS";
+  font-weight: bold;
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Roboto" rel="stylesheet">
+
+<p>
+  <div id="forum-container">
+<%= form_for :registration,:class => "forum",  url: registration_path do |f| %>
+
+
+  <h1 id="title">Register</h1>
+
+  <%= f.label "Username", :class => "username_lab" %>
+
+<br>
+    <%= f.text_field :username, :class => "username in" %>
+</p>
+<br>
+
+<p>
+<%= f.label "Password", :class => "password_lab" %>
+<br>
+<%= f.text_field :password, :class => "password in" %>
+<br>
+</p>
+
+<p>
+  <%= f.label "Zip Code", :class => "zip_lab" %>
+  <br>
+  <%= f.text_field :zip, :class => "zip in" %>
+  <br>
+</p>
+
+
+<%= f.submit "Login", :class => "submit" %>
+
+
+</div>
+
+
+
+
+<% end %>
+
+<div id="errordiv">
+  <h3 id="errortext">Oops! It looks like someone already has that username!</h3>
+</div>
