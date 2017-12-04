@@ -1,31 +1,92 @@
 $(document).ready(function(){
 
+$('.fadein').hide();
+$('.fadein').fadeIn(400);
+
+
+document.onkeypress=function(e){
+
+    if(e.keyCode == 97){
+      event.preventDefault();
+      $.ajax({
+        url: '/random_swipe/update_text',
+        type:'GET',
+        dataType:'JSON',
+        error: function (xhr, ajaxOptions, thrownError) {
+             //alert(xhr.responseText);
+             alert("Oops! Something went wrong! Please try again.")
+         },
+
+        success: function(data){
+
+
+
+
+          d = data
+          name = d[0]
+          price = d[1]
+          type = d[2]
+          dist = d[3]
+          url = d[5]
+
+          console.log(url)
+
+
+          $('.fadein').hide();
+          $('#rest_name').text(name)
+          $('#type').text(type)
+          $('#pricing').text("Pricing: " + price)
+          $('#dist').text("Distance: " + dist + " Miles")
+          $("#img").attr('src', url);
+          document.getElementById('img').height = 267;
+          document.getElementById('img').width = 400;
+          $('.fadein').fadeIn(600);
+        }
+      })
+    }
+
+    if(e.keyCode == 100){
+      $("#btn_rs").click();
+    }
+}
 
 
 $('#new').click(function(){
+
   event.preventDefault();
   $.ajax({
     url: '/random_swipe/update_text',
     type:'GET',
     dataType:'JSON',
     error: function (xhr, ajaxOptions, thrownError) {
-         alert(xhr.responseText);
+         //alert(xhr.responseText);
+         alert("Oops! Something went wrong! Please try again.")
      },
 
     success: function(data){
 
-      // alert('success')
+
+
+
       d = data
       name = d[0]
       price = d[1]
       type = d[2]
       dist = d[3]
+      url = d[5]
 
+      console.log(url)
+
+
+      $('.fadein').hide();
       $('#rest_name').text(name)
       $('#type').text(type)
       $('#pricing').text("Pricing: " + price)
       $('#dist').text("Distance: " + dist + " Miles")
-
+      $("#img").attr('src', url);
+      document.getElementById('img').height = 267;
+      document.getElementById('img').width = 400;
+      $('.fadein').fadeIn(600);
     }
   })
 

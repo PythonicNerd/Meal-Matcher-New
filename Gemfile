@@ -55,3 +55,4 @@ gem 'foursquare2' #accessing Foursquare
 gem 'gon' #passing variables between Ruby and JS
 gem 'geocoder'
 gem 'bourbon'
+gem 'unsplash'

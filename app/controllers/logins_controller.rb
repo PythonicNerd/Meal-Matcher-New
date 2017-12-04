@@ -19,7 +19,7 @@ class LoginsController < ApplicationController
       end
     end
 
-    
+
 
     if match
       redirect_to random_swipe_path
