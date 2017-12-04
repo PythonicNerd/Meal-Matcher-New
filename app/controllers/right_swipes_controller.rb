@@ -56,9 +56,16 @@ class RightSwipesController < ApplicationController
     @hours = ""
   end
     begin
-    @address = "Address:" + @THIS_REST[:location][:address].to_s
+    @address = "Address: " + @THIS_REST[:location][:address].to_s
   rescue
     @address = ""
+  end
+
+
+  begin
+    @url__ = @THIS_REST[:menu][:url]
+  rescue
+    @url__ = "#"
   end
 
     render 'index'
