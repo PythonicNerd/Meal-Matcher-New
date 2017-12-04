@@ -65,7 +65,7 @@ class RightSwipesController < ApplicationController
   begin
     @url__ = @THIS_REST[:menu][:url]
   rescue
-    @url__ = "#"
+    @url__ = ""
   end
 
     render 'index'
