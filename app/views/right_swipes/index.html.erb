@@ -24,48 +24,28 @@
 </style>
 
 <div id="content">
-<% begin %>
-<h1 ><%=@THIS_REST[:name]%></h1>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
 
-<% begin %>
-<h2>Rating: <%= @THIS_REST[:rating] %></h2>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
 
-<% begin %>
-<h2> <%= @THIS_REST[:price][:stats] %> </h2>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
 
-<% begin %>
-<h2>Phone: <%= @THIS_REST[:contact][:formattedPhone] %></h2>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
+<h1 ><%= @name %></h1>
 
-<% begin %>
-<h2><%=@THIS_REST[:hours][:richStatus][:text] %></h2>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
 
-<% begin %>
+<h2><%= @rating %></h2>
+
+
+<h2> <%= @p_s %> </h2>
+
+
+<h2><%= @phone %></h2>
+
+
+<h2><%=@hours %></h2>
+
+
 <h2 id = link><a href="<%= @THIS_REST[:menu][:url] %>" target="_blank">Menu</a></h2>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
 
+<h2><%= @address %> </h2>
 
-<% begin %>
-<h2>Address: <%= @THIS_REST[:location][:address] %> </h2>
-<% rescue %>
-<% puts "\n" %>
-<% end %>
 
 
 <a href="/random_swipe/#">Back</a>

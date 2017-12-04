@@ -30,6 +30,37 @@ class RightSwipesController < ApplicationController
 
     @THIS_REST = Rails.application.config.rest
 
+    begin
+    @name = @THIS_REST[:name]
+  rescue
+
+  end
+    begin
+    @rating = "Rating " + @THIS_REST[:rating].to_s
+  rescue
+    @rating = ""
+  end
+    begin
+    @p_s = @THIS_REST[:price][:stats]
+  rescue
+    @p_s = ""
+  end
+    begin
+    @phone = "Phone:" + @THIS_REST[:contact][:formattedPhone].to_s
+  rescue
+    @phone = ""
+  end
+    begin
+    @hours = @THIS_REST[:hours][:richStatus][:text]
+  rescue
+    @hours = ""
+  end
+    begin
+    @address = "Address:" + @THIS_REST[:location][:address].to_s
+  rescue
+    @address = ""
+  end
+
     render 'index'
   end
 
