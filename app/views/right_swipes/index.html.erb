@@ -1,60 +1,73 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
 *{
   text-align:center;
+  font-family: 'Roboto', serif;
 }
 
 #link{
   color:black;
 
 }
+
+#content{
+  background-color:rgba(255, 255, 255, .5);
+  margin-top: 50px;
+  height:500px;
+  width:400px;
+  border:1px solid black;
+
+  margin-left:auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
 </style>
 
+<div id="content">
 <% begin %>
-<h1><%=@THIS_REST[:name]%></h1>
+<h1 ><%=@THIS_REST[:name]%></h1>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 <% begin %>
 <h2>Rating: <%= @THIS_REST[:rating] %></h2>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 <% begin %>
 <h2> <%= @THIS_REST[:price][:stats] %> </h2>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 <% begin %>
 <h2>Phone: <%= @THIS_REST[:contact][:formattedPhone] %></h2>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 <% begin %>
 <h2><%=@THIS_REST[:hours][:richStatus][:text] %></h2>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 <% begin %>
 <h2 id = link><a href="<%= @THIS_REST[:menu][:url] %>" target="_blank">Menu</a></h2>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 
 <% begin %>
 <h2>Address: <%= @THIS_REST[:location][:address] %> </h2>
 <% rescue %>
+<% puts "\n" %>
 <% end %>
 
 
-<a class="frame-btn login" href="/random_swipe/">
-<span class="frame-btn__outline frame-btn__outline--tall">
-<span class="frame-btn__line frame-btn__line--tall"></span>
-<span class="frame-btn__line frame-btn__line--flat"></span>
-</span>
-<span class="frame-btn__outline frame-btn__outline--flat">
-<span class="frame-btn__line frame-btn__line--tall"></span>
-<span class="frame-btn__line frame-btn__line--flat"></span>
-</span>
-<span class="frame-btn__solid"></span>
-<span class="frame-btn__text">Back</span>
-</a>
+<a href="/random_swipe/#">Back</a>
+
+</div>

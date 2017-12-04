@@ -1,7 +1,11 @@
 $(document).ready(function(){
 
+alert("Press A to swipe left, and D to swipe right")
+
 $('.fadein').hide();
 $('.fadein').fadeIn(400);
+
+$("#btn_rs").hide();
 
 
 document.onkeypress=function(e){
@@ -18,9 +22,6 @@ document.onkeypress=function(e){
          },
 
         success: function(data){
-
-
-
 
           d = data
           name = d[0]

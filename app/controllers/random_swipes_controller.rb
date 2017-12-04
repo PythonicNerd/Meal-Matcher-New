@@ -69,6 +69,8 @@ class RandomSwipesController < ApplicationController
 
       @url = search_results[0][:urls][:small]
 
+      Rails.application.config.img_url = @url
+
       puts "URL"
       puts @url
       puts @url.class
@@ -76,10 +78,11 @@ class RandomSwipesController < ApplicationController
 
 
       render 'random_card_view'
-      
+
     rescue
       redirect_to random_swipe_path
     end
+
 
     end
   end
