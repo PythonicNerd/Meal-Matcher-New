@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'misc#home.html.erb'
 
+  resource :admin
   resource :login
   resource :registration
   resource :right_swipe
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   resource :prediction_swipe
   get '/home' => 'misc#home.html.erb'
+
+
 
 
 
