@@ -8,7 +8,7 @@ class LoginsController < ApplicationController
     match = false
 
     User.all.each do |i|
-      if u[:username] == i[:username]
+      if u[:username].downcase == i[:username].downcase
         if u[:password] == i[:password]
           puts "We have a match! Woo hoo!"
           @logged_in = true
