@@ -1,0 +1,27 @@
+
+<p>
+  <div id="forum-container">
+    <%= form_for :admin_login, :class => "forum", url: admin_path do |f| %>
+
+
+  <h1 id="title">Admin Login</h1>
+
+  <%= f.label "Username", :class => "username_lab" %>
+
+<br>
+    <%= f.text_field :username, :class => "username in" %>
+</p>
+<br>
+
+<p>
+<%= f.label "Password", :class => "password_lab" %>
+<br>
+<%= f.text_field :password, :class => "password in" %>
+<br>
+</p>
+
+
+<%= f.submit "Login", :class => "submit" %>
+
+</div>
+<% end %>
